@@ -19,7 +19,7 @@ def selectionSort(dataArray):
     return newArray
 
 
-dataToOrder = [12, 5, 34, 1, 16, 99]
+dataToSort = [12, 5, 34, 1, 16, 99]
 
 #   smallest        original array          new array
 #   1               12 5 34 16 99           1
@@ -29,4 +29,4 @@ dataToOrder = [12, 5, 34, 1, 16, 99]
 #   34              99                      1 5 12 16 34
 #   99                                      1 5 12 16 34 99 
 
-print(selectionSort(dataToOrder))
+print(selectionSort(dataToSort))
