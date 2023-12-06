@@ -4,7 +4,6 @@ def countdown(i):
 
 def fibonacci(n):
     if n <= 1:
-        print("X")
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
 
@@ -18,7 +17,7 @@ def sumN_NatNum(n):
         return n
     return n + sumN_NatNum(n - 1)
 
-test_num  = 12
+test_num  = 4
 test_numx = 0
 
 #countdown(10)
