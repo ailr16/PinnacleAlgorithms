@@ -8,5 +8,21 @@ def fibonacci(n):
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
 
+def factorial(n):
+    if n == 1 or n == 0:
+        return 1
+    return n*factorial(n-1)
+
+def sumN_NatNum(n):
+    if n == 1 or n == 0:
+        return n
+    return n + sumN_NatNum(n - 1)
+
+test_num  = 12
+test_numx = 0
+
 #countdown(10)
-print(fibonacci(7))
+print("Fibonacci(" + str(test_num) + ")=" + str(fibonacci(test_num)))
+print(str(test_num) + "!=" + str(factorial(test_num)))
+print(str(test_numx) + "!=" + str(factorial(test_numx)))
+print("Sum of first " + str(test_num) + " natural numbers= " + str(sumN_NatNum(test_num)))
