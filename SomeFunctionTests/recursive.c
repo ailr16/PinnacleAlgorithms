@@ -6,7 +6,19 @@
     gcc -Wall -o SomeFunctionTests/recursive SomeFunctionTests/recursive.c -g  
 */
 
-int main(void)
+void countdown( int n );
+
+int main( void )
 {
+    countdown( 16 );
     return 0;
+}
+
+void countdown( int n )
+{
+    printf("Countdown: %d\n", n);
+    if( n > 0 )
+    {
+        countdown( n - 1 );
+    }
 }
