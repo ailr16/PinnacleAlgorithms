@@ -8,11 +8,13 @@
 
 void countdown( int n );
 int fibonacci( int n );
+int factorial( int n );
 
 int main( void )
 {
     countdown( 16 );
     printf("Fibonacci (7)= %d\n", fibonacci( 7 ));
+    printf("7!= %d\n", factorial( 7 ));
     return 0;
 }
 
@@ -33,5 +35,13 @@ int fibonacci( int n )
     }
 
     return ( fibonacci( n - 1 ) + fibonacci( n - 2 ) );
+}
 
+int factorial( int n )
+{
+    if( n <= 1)
+    {
+        return 1;
+    }
+    return n * factorial(n - 1);
 }
