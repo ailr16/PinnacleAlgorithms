@@ -9,12 +9,15 @@
 void countdown( int n );
 int fibonacci( int n );
 int factorial( int n );
+int sumNnat( int n);
 
 int main( void )
 {
     countdown( 16 );
     printf("Fibonacci (7)= %d\n", fibonacci( 7 ));
     printf("7!= %d\n", factorial( 7 ));
+    printf("0!= %d\n", factorial( 0 ));
+    printf("Sum of 7 first natural numbers= %d\n", sumNnat( 7 ));
     return 0;
 }
 
@@ -44,4 +47,13 @@ int factorial( int n )
         return 1;
     }
     return n * factorial(n - 1);
+}
+
+int sumNnat( int n)
+{
+    if( n <= 1 )
+    {
+        return n;
+    }
+    return n + sumNnat( n - 1 );
 }
