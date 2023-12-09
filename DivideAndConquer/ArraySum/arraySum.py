@@ -1,7 +1,7 @@
 def numberArraySum(array:list):
-    if len(array) == 0:
+    if array == []:
         return 0
-    return array.pop() + numberArraySum(array)
+    return array[0] + numberArraySum(array[1:])
 
 test_array1 = [1, 2, 3, 4 ,5]
 test_array2 = [1, 2, 3, 4 ,5, 20, 30, 12, 4, 12, 18]
