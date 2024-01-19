@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /*
-    gcc -Wall -o Quicksort/quicksort Quicksort/quicksort.c -g && ./Quicksort/quicksort
-    gdb Quicksort/quicksort
+    gcc -Wall -o Sort/Quicksort/quicksort Sort/Quicksort/quicksort.c -g && ./Sort/Quicksort/quicksort
+    gdb Sort/Quicksort/quicksort
 */
 
 void swap( int *a, int *b )

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
-    gcc -Wall -o SelectionSort/selectionSort SelectionSort/selectionSort.c -g && ./SelectionSort/selectionSort
+    gcc -Wall -o Sort/SelectionSort/selectionSort Sort/SelectionSort/selectionSort.c -g && ./Sort/SelectionSort/selectionSort
 */
 
 void swap( int *a, int *b )
