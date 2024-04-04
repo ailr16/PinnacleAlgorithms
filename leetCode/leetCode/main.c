@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 /**
  * Problem 1
@@ -117,7 +118,27 @@ void addTwoNumbersTest(void) {
 	}
 }
 
+
+bool isPalindrome(int x) {
+	bool returnValue = false;
+	int reversedNumber = 0;
+
+	int i = 1;
+	while (x != 0) {
+		reversedNumber += (x % 10) * (i);
+		x /= 10;
+		printf("%d\n", reversedNumber);
+		i *= 10;
+	}
+
+	return returnValue;
+}
+
+void isPalindromeTest(void) {
+	isPalindrome(123);
+}
+
 int main() {
-	addTwoNumbersTest();
+	isPalindromeTest();
 	return 0;
 }
