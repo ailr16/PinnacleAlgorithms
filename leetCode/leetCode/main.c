@@ -120,22 +120,29 @@ void addTwoNumbersTest(void) {
 
 
 bool isPalindrome(int x) {
-	bool returnValue = false;
-	int reversedNumber = 0;
+	long reversedNumber = 0;
+	int originalNumber = x;
 
-	int i = 1;
+	if (x < 0)
+		return false;
+
 	while (x != 0) {
-		reversedNumber += (x % 10) * (i);
+		reversedNumber *= 10;
+		reversedNumber += x % 10;
 		x /= 10;
-		printf("%d\n", reversedNumber);
-		i *= 10;
 	}
 
-	return returnValue;
+	if (originalNumber == reversedNumber)
+		return true;
+	else
+		return false;
 }
 
 void isPalindromeTest(void) {
-	isPalindrome(123);
+	printf("%d\n", isPalindrome(123));
+	printf("%d\n", isPalindrome(12321));
+	printf("%d\n", isPalindrome(121));
+	printf("%d\n", isPalindrome(-121));
 }
 
 int main() {
