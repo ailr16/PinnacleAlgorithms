@@ -275,25 +275,19 @@ void printArray(int* array, int arraySize) {
 	printf("]\n");
 }
 
-void deleteAndShift(int* array, int arraySize, int index ) {
-	for (int i = index; i < arraySize - index; i++) {
-		array[i] = array[i + 1];
-	}
-}
-
 int removeDuplicates(int* nums, int numsSize) {
-	int remain = numsSize;
+	int size = 1;
 
-	for (int i = 0; i < remain; i++) {
-		for (int j = i; j < remain - 1; j++) {
-			if (nums[i] == nums[j]) {
-				deleteAndShift(nums, numsSize, i);
-				remain--;
-			}
+	if (numsSize == 0)	return 0;
+
+	for (int i = 1; i < numsSize; i++) {
+		if (nums[i] != nums[i - 1]) {
+			nums[size] = nums[i];
+			size++;
 		}
 	}
 
-	return remain;
+	return size;
 }
 
 
