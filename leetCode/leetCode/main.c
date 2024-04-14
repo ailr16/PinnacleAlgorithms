@@ -229,7 +229,93 @@ void hammingWeightTest(void) {
 	printf("%d\n", hammingWeight(2147483645));
 }
 
+
+/**
+ * Problem 8
+ * String to Integer
+ */
+int myAtoi(char* s) {
+	bool sign = 0;
+	int number = 0;
+
+	while (*s != '\0') {
+		if (*s == ' ');
+		if (*s == '-') sign = true;
+		if (*s == '+') sign = false;
+		if (*s >= '0' && *s <= '9') {
+			number = number * 10;
+			number += *s - '0';
+			if (s[1] == ' ') break;
+		}
+		s++;
+	}
+
+	if (sign) number *= -1;
+
+	return number;
+}
+
+void myAtoiTest(void) {
+	printf("%d\n", myAtoi("42"));
+	printf("%d\n", myAtoi("    -42"));
+	printf("%d\n", myAtoi("4193with words"));
+	printf("%d\n", myAtoi("words and 987"));
+}
+
+
+/**
+ * Problem 26
+ * Remove duplicates from sorted array
+ */
+void printArray(int* array, int arraySize) {
+	printf("[ ");
+	for (int i = 0; i < arraySize; i++) {
+		printf("%d ", array[i]);
+	}
+	printf("]\n");
+}
+
+void deleteAndShift(int* array, int arraySize, int index ) {
+	for (int i = index; i < arraySize - index; i++) {
+		array[i] = array[i + 1];
+	}
+}
+
+int removeDuplicates(int* nums, int numsSize) {
+	int remain = numsSize;
+
+	for (int i = 0; i < remain; i++) {
+		for (int j = i; j < remain - 1; j++) {
+			if (nums[i] == nums[j]) {
+				deleteAndShift(nums, numsSize, i);
+				remain--;
+			}
+		}
+	}
+
+	return remain;
+}
+
+
+void removeDuplicatesTest(void) {
+	int array1[3] = { 1,1,2 };
+	int array2[10] = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+	int array3[16] = { 0, 0, 0, 0, 0, 1, 1, 2, 3, 4, 5, 5, 6, 18, 100, 112};
+
+	int array1Size = removeDuplicates(array1, 3);
+	printf("%d\t", array1Size);
+	printArray(array1, array1Size);
+
+	int array2Size = removeDuplicates(array2, 10);
+	printf("%d\t", array2Size);
+	printArray(array2, array2Size);
+
+	int array3Size = removeDuplicates(array3, 16);
+	printf("%d\t", array3Size);
+	printArray(array3, array3Size);
+}
+
 int main() {
-	hammingWeightTest();
+	removeDuplicatesTest();
 	return 0;
 }
