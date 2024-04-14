@@ -145,7 +145,34 @@ void isPalindromeTest(void) {
 	printf("%d\n", isPalindrome(-121));
 }
 
+int reverse(int x) {
+	int reversedNumber = 0;
+
+	while (x) {
+		if (reversedNumber > INT_MAX / 10 || reversedNumber < INT_MIN / 10) {
+			return 0;
+		}
+		reversedNumber *= 10;
+		reversedNumber += x % 10;
+		x /= 10;
+	}
+
+	return reversedNumber;
+}
+
+void reverseTest(void) {
+	printf("%d\n", reverse(123));
+	printf("%d\n", reverse(-123));
+	printf("%d\n", reverse(120));
+	printf("%d\n", reverse(10008000));
+	printf("%d\n", reverse(-10008000));
+	printf("%d\n", reverse(2147483647));
+	printf("%d\n", reverse(-2147483647));
+	printf("%d\n", reverse(746384749));
+	printf("%d\n", reverse(1534236469));
+}
+
 int main() {
-	isPalindromeTest();
+	reverseTest();
 	return 0;
 }
