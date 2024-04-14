@@ -5,6 +5,7 @@
 
 /**
  * Problem 1
+ * Two Sum
  */
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 	int i, j;
@@ -43,6 +44,7 @@ void twoSumTest(void) {
 
 /**
  * Problem 2
+ * Add Two Numbers
  */
 struct ListNode {
 	int val;
@@ -120,6 +122,10 @@ void addTwoNumbersTest(void) {
 }
 
 
+/**
+ * Problem 9
+ * Palindrome Number
+ */
 bool isPalindrome(int x) {
 	long reversedNumber = 0;
 	int originalNumber = x;
@@ -146,6 +152,11 @@ void isPalindromeTest(void) {
 	printf("%d\n", isPalindrome(-121));
 }
 
+
+/**
+ * Problem 7
+ * Reverse Integer
+ */
 int reverse(int x) {
 	int reversedNumber = 0;
 
@@ -173,6 +184,11 @@ void reverseTest(void) {
 	printf("%d\n", reverse(1534236469));
 }
 
+
+/**
+ * Problem 190
+ * Reverse Bits
+ */
 uint32_t reverseBits(uint32_t n) {
 	uint32_t reversed = 0;
 
@@ -191,7 +207,29 @@ void reverseBitsTest() {
 	printf("%d\n", reverseBits(31890));
 }
 
+
+/**
+ * Problem 191
+ * Number of 1 Bits
+ */
+int hammingWeight(int n) {
+	int bits = 0;
+
+	while (n) {
+		if(n & 1) bits++;
+		n >>= 1;
+	}
+
+	return bits;
+}
+
+void hammingWeightTest(void) {
+	printf("%d\n", hammingWeight(11));
+	printf("%d\n", hammingWeight(128));
+	printf("%d\n", hammingWeight(2147483645));
+}
+
 int main() {
-	reverseBitsTest();
+	hammingWeightTest();
 	return 0;
 }
