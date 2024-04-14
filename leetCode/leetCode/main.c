@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 /**
  * Problem 1
@@ -172,7 +173,25 @@ void reverseTest(void) {
 	printf("%d\n", reverse(1534236469));
 }
 
+uint32_t reverseBits(uint32_t n) {
+	uint32_t reversed = 0;
+
+	for (char i = 0; i < 32; i++) {
+		reversed = reversed << 1;
+		reversed |= n & 1;
+		n = n >> 1;
+	}
+
+	return reversed;
+}
+
+void reverseBitsTest() {
+	printf("%d\n", reverseBits(10));
+	printf("%d\n", reverseBits(188));
+	printf("%d\n", reverseBits(31890));
+}
+
 int main() {
-	reverseTest();
+	reverseBitsTest();
 	return 0;
 }
