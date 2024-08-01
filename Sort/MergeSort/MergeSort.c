@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+#define CASE case
+
 void merge_sort( int *array, int length );
 void merge_sort_recursion( int *a, int left, int right );
 void merge_sorted_arrays( int *a, int left, int mid, int right );
