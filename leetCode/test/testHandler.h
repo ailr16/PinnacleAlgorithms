@@ -2,10 +2,12 @@
 #define TEST_HANDLER_H
 
 #include <stdint.h>
+#include <stdio.h>
 #include <string.h>
 
 typedef struct _test{
     void (*function)(void);
+    char testName[120];
 } SingleTestBlock;
 
 typedef struct _tests{

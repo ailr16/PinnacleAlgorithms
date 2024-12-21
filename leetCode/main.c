@@ -1,17 +1,6 @@
 #include "general.h"
 #include "solutions.h"
-#include "testHandler.h"
-
-void twoSumTest(void) {
-	int nums[3] = { 3, 2, 4};
-	int* result;
-	int returnSize;
-
-	result = twoSum(nums, 3, 6, &returnSize);
-	printf("%d %d\n", result[0], result[1]);
-	free(result);
-}
-
+#include "tests.h"
 
 void addTwoNumbersTest(void) {
 	struct ListNode* result;
@@ -121,7 +110,7 @@ void reverseListTest(void) {
 	result = reverseList(&l1);
 }
 
-SingleTestBlock array[50];
+SingleTestBlock array[100];
 TestsHandler    htest;
 
 int main() {
@@ -130,9 +119,7 @@ int main() {
 	initTests( &htest, array );
 	printf( "Total tests: %d\n", htest.totalTests);
 
-	tempTest.function = twoSumTest;
-	registerTest( &htest, &tempTest );
-	printf( "Total tests: %d\n", htest.totalTests);
+	Register_tests_twoSum();
 
 	runTests( &htest );
 

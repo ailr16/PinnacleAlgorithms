@@ -7,9 +7,10 @@ PROJECT_DIR   := $(CURDIR)
 BUILD_DIR     := $(PROJECT_DIR)/Build
 INCLUDE_DIR   := $(PROJECT_DIR)/inc
 
-TEST_INC_DIR      := $(PROJECT_DIR)/test/inc
+TEST_DIR      := $(PROJECT_DIR)/test
 
-SRCS		  := src/twoSum.c
+SRCS          := main.c
+SRCS		  += src/twoSum.c
 SRCS		  += src/addTwoNumbers.c
 SRCS		  += src/isPalindrome.c
 SRCS		  += src/reverse.c
@@ -19,12 +20,12 @@ SRCS		  += src/myAtoi.c
 SRCS		  += src/removeDuplicates.c
 SRCS		  += src/divide.c
 SRCS		  += src/reverseList.c
-SRCS          += test/src/testHandler.c
-SRCS          += main.c
+SRCS          += test/testHandler.c
+SRCS		  += test/testsSrc/test_twoSum.c
 
 all : $(SRCS)
 	mkdir $(BUILD_DIR) -p
-	$(CC) -o $(BUILD_DIR)/$(PROJECT_NAME) $^ $(CCFLAGS) -I $(INCLUDE_DIR) -I $(TEST_INC_DIR)
+	$(CC) -o $(BUILD_DIR)/$(PROJECT_NAME) $^ $(CCFLAGS) -I $(INCLUDE_DIR) -I $(TEST_DIR)
 
 .PHONY: run
 run:
