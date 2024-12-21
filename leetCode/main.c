@@ -61,22 +61,6 @@ void reverseBitsTest() {
 	printf("%d\n", reverseBits(31890));
 }
 
-
-/**
- * Problem 191
- * Number of 1 Bits
- */
-int hammingWeight(int n) {
-	int bits = 0;
-
-	while (n) {
-		if(n & 1) bits++;
-		n >>= 1;
-	}
-
-	return bits;
-}
-
 void hammingWeightTest(void) {
 	printf("%d\n", hammingWeight(11));
 	printf("%d\n", hammingWeight(128));
@@ -84,66 +68,12 @@ void hammingWeightTest(void) {
 }
 
 
-/**
- * Problem 8
- * String to Integer
- */
-int myAtoi(char* s) {
-	bool sign = 0;
-	int number = 0;
-
-	while (*s != '\0') {
-		if (*s == ' ');
-		if (*s == '-') sign = true;
-		if (*s == '+') sign = false;
-		if (*s >= '0' && *s <= '9') {
-			number = number * 10;
-			number += *s - '0';
-			if (s[1] == ' ') break;
-		}
-		s++;
-	}
-
-	if (sign) number *= -1;
-
-	return number;
-}
-
 void myAtoiTest(void) {
 	printf("%d\n", myAtoi("42"));
 	printf("%d\n", myAtoi("    -42"));
 	printf("%d\n", myAtoi("4193with words"));
 	printf("%d\n", myAtoi("words and 987"));
 }
-
-
-/**
- * Problem 26
- * Remove duplicates from sorted array
- */
-void printArray(int* array, int arraySize) {
-	printf("[ ");
-	for (int i = 0; i < arraySize; i++) {
-		printf("%d ", array[i]);
-	}
-	printf("]\n");
-}
-
-int removeDuplicates(int* nums, int numsSize) {
-	int size = 1;
-
-	if (numsSize == 0)	return 0;
-
-	for (int i = 1; i < numsSize; i++) {
-		if (nums[i] != nums[i - 1]) {
-			nums[size] = nums[i];
-			size++;
-		}
-	}
-
-	return size;
-}
-
 
 void removeDuplicatesTest(void) {
 	int array1[3] = { 1,1,2 };
@@ -163,54 +93,12 @@ void removeDuplicatesTest(void) {
 	printArray(array3, array3Size);
 }
 
-
-/**
- * Problem 29
- * Divide two integers
- */
-int divide(int dividend, int divisor) {
-	bool sign = (dividend < 0) ^ (divisor < 0);
-	
-	if (divisor == 0) return 0;
-	if ((dividend == INT_MAX && divisor == 1) || (divisor == -INT_MAX && dividend == -1)) return INT_MAX;
-	if ((dividend == INT_MIN && divisor == 1) || (divisor == -INT_MAX && dividend == -1)) return INT_MIN;
-
-	unsigned result = 0;
-	int udividend = abs(dividend);
-	int udivisor = abs(divisor);
-
-	while (udividend >= udivisor) {
-		udividend -= udivisor;
-		result++;
-	}
-
-	if (sign) result *= -1;
-
-	return result;
-}
-
 void divideTest(void) {
 	printf("%d\n", divide(-10, -3));
 	printf("%d\n", divide(-2147483647, -1));
 	printf("%d\n", divide(2147483647, -1));
 }
 
-
-/**
- * Problem 206
- * Reverse Linked List
- */
-struct ListNode* reverseList(struct ListNode* head) {
-	struct ListNode* prev = head;
-	struct ListNode* i = head->next;
-
-	while (i) {
-		printf("prev=%d current=%d next=%d\n", prev->val, i->val, i->next->val);
-		prev = prev->next;
-		i = i->next;
-	}
-	
-}
 
 void reverseListTest(void) {
 	struct ListNode* result;
@@ -248,6 +136,21 @@ int main() {
 	printf("--------------------------------\n");
 	printf("Reverse bits:\n");
 	reverseBitsTest();
+	printf("--------------------------------\n");
+	printf("Hamming Weight:\n");
+	hammingWeightTest();
+	printf("--------------------------------\n");
+	printf("Atoi:\n");
+	myAtoiTest();
+	printf("--------------------------------\n");
+	printf("Remove Duplicates:\n");
+	myAtoiTest();
+	printf("--------------------------------\n");
+	printf("Divide:\n");
+	myAtoiTest();
+	printf("--------------------------------\n");
+	printf("Reverse List:\n");
+	reverseListTest();
 	printf("--------------------------------\n");
 
 	return 0;

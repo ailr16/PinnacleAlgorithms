@@ -7,5 +7,10 @@
 #include "isPalindrome.h"
 #include "reverse.h"
 #include "reverseBits.h"
+#include "hammingWeight.h"
+#include "myAtoi.h"
+#include "removeDuplicates.h"
+#include "divide.h"
+#include "reverseList.h"
 
 #endif

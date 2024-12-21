@@ -14,4 +14,6 @@ struct ListNode {
 	struct ListNode* next;
 };
 
+void printArray(int* array, int arraySize);
+
 #endif

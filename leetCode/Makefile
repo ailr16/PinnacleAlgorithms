@@ -13,6 +13,11 @@ SRCS		  += src/addTwoNumbers.c
 SRCS		  += src/isPalindrome.c
 SRCS		  += src/reverse.c
 SRCS		  += src/reverseBits.c
+SRCS		  += src/hammingWeight.c
+SRCS		  += src/myAtoi.c
+SRCS		  += src/removeDuplicates.c
+SRCS		  += src/divide.c
+SRCS		  += src/reverseList.c
 
 all : $(SRCS)
 	mkdir $(BUILD_DIR) -p
