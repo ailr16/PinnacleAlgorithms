@@ -8,6 +8,7 @@ BUILD_DIR     := $(PROJECT_DIR)/Build
 INCLUDE_DIR   := $(PROJECT_DIR)/inc
 
 SRCS          := main.c
+SRCS		  += src/twoSum.c
 
 all : $(SRCS)
 	mkdir $(BUILD_DIR) -p
