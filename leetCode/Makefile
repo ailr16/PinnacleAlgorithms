@@ -21,7 +21,7 @@ SRCS		  += src/removeDuplicates.c
 SRCS		  += src/divide.c
 SRCS		  += src/reverseList.c
 SRCS          += test/testHandler.c
-SRCS		  += test/testsSrc/test_twoSum.c
+SRCS		  += $(wildcard test/testsSrc/test_*.c)
 
 all : $(SRCS)
 	mkdir $(BUILD_DIR) -p
