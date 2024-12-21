@@ -117,12 +117,10 @@ int main() {
 	SingleTestBlock tempTest;
 
 	initTests( &htest, array );
-	printf( "Total tests: %d\n", htest.totalTests);
 
 	Register_tests_twoSum();
 
 	runTests( &htest );
-
 
 	/*
 	printf("--------------------------------\n");
