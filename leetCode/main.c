@@ -2,28 +2,6 @@
 #include "solutions.h"
 #include "tests.h"
 
-void addTwoNumbersTest(void) {
-	struct ListNode* result;
-
-	struct ListNode l1d = { .val = 1, .next = NULL };
-	struct ListNode l1  = { .val = 1, .next = &l1d };
-
-	struct ListNode l2d = { .val = 9, .next = NULL };
-	struct ListNode l2c = { .val = 9, .next = &l2d };
-	struct ListNode l2b = { .val = 9, .next = &l2c };
-	struct ListNode l2  = { .val = 9, .next = &l2b };
-
-	result = addTwoNumbers(&l1, &l2);
-	
-	struct ListNode* i = result;
-
-	while (i) {
-		printf("%d\n", i->val);
-		i = i->next;
-	}
-}
-
-
 void isPalindromeTest(void) {
 	printf("%d\n", isPalindrome(123));
 	printf("%d\n", isPalindrome(12321));
@@ -119,6 +97,7 @@ int main() {
 	initTests( &htest, array );
 
 	Register_tests_twoSum();
+	Register_tests_addTwoNumbers();
 
 	runTests( &htest );
 
