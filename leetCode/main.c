@@ -1,5 +1,6 @@
 #include "general.h"
 #include "solutions.h"
+#include "testHandler.h"
 
 void twoSumTest(void) {
 	int nums[3] = { 3, 2, 4};
@@ -120,7 +121,23 @@ void reverseListTest(void) {
 	result = reverseList(&l1);
 }
 
+SingleTestBlock array[50];
+TestsHandler    htest;
+
 int main() {
+	SingleTestBlock tempTest;
+
+	initTests( &htest, array );
+	printf( "Total tests: %d\n", htest.totalTests);
+
+	tempTest.function = twoSumTest;
+	registerTest( &htest, &tempTest );
+	printf( "Total tests: %d\n", htest.totalTests);
+
+	runTests( &htest );
+
+
+	/*
 	printf("--------------------------------\n");
 	printf("Two Sum:\n");
 	twoSumTest();
@@ -152,6 +169,7 @@ int main() {
 	printf("Reverse List:\n");
 	reverseListTest();
 	printf("--------------------------------\n");
+	*/
 
 	return 0;
 }
