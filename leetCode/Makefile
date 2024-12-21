@@ -9,6 +9,10 @@ INCLUDE_DIR   := $(PROJECT_DIR)/inc
 
 SRCS          := main.c
 SRCS		  += src/twoSum.c
+SRCS		  += src/addTwoNumbers.c
+SRCS		  += src/isPalindrome.c
+SRCS		  += src/reverse.c
+SRCS		  += src/reverseBits.c
 
 all : $(SRCS)
 	mkdir $(BUILD_DIR) -p

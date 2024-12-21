@@ -9,4 +9,9 @@
 #include <stdint.h>
 #include <limits.h>
 
+struct ListNode {
+	int val;
+	struct ListNode* next;
+};
+
 #endif

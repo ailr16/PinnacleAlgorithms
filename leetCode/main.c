@@ -12,64 +12,6 @@ void twoSumTest(void) {
 }
 
 
-/**
- * Problem 2
- * Add Two Numbers
- */
-struct ListNode {
-	int val;
-	struct ListNode* next;
-};
-
-struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
-	struct ListNode* returnValue = NULL;
-	struct ListNode* temp = NULL;
-
-	struct ListNode* i1 = l1;
-	struct ListNode* i2 = l2;
-
-	char carry = 0;
-	int sum = 0;
-
-	while (i1 || i2 || carry) {
-		if (i1) {
-			sum += i1->val;
-			i1 = i1->next;
-		}
-
-		if (i2) {
-			sum += i2->val;
-			i2 = i2->next;
-		}
-
-		if (carry) {
-			sum++;
-			carry = 0;
-		}
-
-		if (sum > 9) {
-			carry = 1;
-			sum = sum % 10;
-		}
-
-		struct ListNode* newNode = malloc(sizeof(struct ListNode));
-		if (newNode) newNode->val = sum;
-
-		if (returnValue) {
-			temp->next = newNode;
-			temp = newNode;
-		}
-		else {
-			returnValue = temp = newNode;
-		}
-
-		sum = 0;
-	}
-	
-	if (temp) temp->next = NULL;
-	return returnValue;
-}
-
 void addTwoNumbersTest(void) {
 	struct ListNode* result;
 
@@ -92,29 +34,6 @@ void addTwoNumbersTest(void) {
 }
 
 
-/**
- * Problem 9
- * Palindrome Number
- */
-bool isPalindrome(int x) {
-	long reversedNumber = 0;
-	int originalNumber = x;
-
-	if (x < 0)
-		return false;
-
-	while (x != 0) {
-		reversedNumber *= 10;
-		reversedNumber += x % 10;
-		x /= 10;
-	}
-
-	if (originalNumber == reversedNumber)
-		return true;
-	else
-		return false;
-}
-
 void isPalindromeTest(void) {
 	printf("%d\n", isPalindrome(123));
 	printf("%d\n", isPalindrome(12321));
@@ -122,25 +41,6 @@ void isPalindromeTest(void) {
 	printf("%d\n", isPalindrome(-121));
 }
 
-
-/**
- * Problem 7
- * Reverse Integer
- */
-int reverse(int x) {
-	int reversedNumber = 0;
-
-	while (x) {
-		if (reversedNumber > INT_MAX / 10 || reversedNumber < INT_MIN / 10) {
-			return 0;
-		}
-		reversedNumber *= 10;
-		reversedNumber += x % 10;
-		x /= 10;
-	}
-
-	return reversedNumber;
-}
 
 void reverseTest(void) {
 	printf("%d\n", reverse(123));
@@ -154,22 +54,6 @@ void reverseTest(void) {
 	printf("%d\n", reverse(1534236469));
 }
 
-
-/**
- * Problem 190
- * Reverse Bits
- */
-uint32_t reverseBits(uint32_t n) {
-	uint32_t reversed = 0;
-
-	for (char i = 0; i < 32; i++) {
-		reversed = reversed << 1;
-		reversed |= n & 1;
-		n = n >> 1;
-	}
-
-	return reversed;
-}
 
 void reverseBitsTest() {
 	printf("%d\n", reverseBits(10));
@@ -349,6 +233,22 @@ void reverseListTest(void) {
 }
 
 int main() {
+	printf("--------------------------------\n");
+	printf("Two Sum:\n");
 	twoSumTest();
+	printf("--------------------------------\n");
+	printf("Add Two Numbers:\n");
+	addTwoNumbersTest();
+	printf("--------------------------------\n");
+	printf("Is Palindrome:\n");
+	isPalindromeTest();
+	printf("--------------------------------\n");
+	printf("Reverse:\n");
+	reverseTest();
+	printf("--------------------------------\n");
+	printf("Reverse bits:\n");
+	reverseBitsTest();
+	printf("--------------------------------\n");
+
 	return 0;
 }
