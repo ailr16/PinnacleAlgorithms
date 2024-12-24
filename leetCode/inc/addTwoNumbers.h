@@ -4,5 +4,6 @@
 #include "general.h"
 
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2);
+struct ListNode* addTwoNumbers_leg(struct ListNode* l1, struct ListNode* l2);
 
 #endif
