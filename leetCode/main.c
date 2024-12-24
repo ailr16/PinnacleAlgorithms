@@ -10,16 +10,47 @@ int main() {
 
 	initTests( &htest, array );
 
-	Register_tests_twoSum();
-	Register_tests_addTwoNumbers();
-	Register_tests_isPalindrome();
-	Register_tests_reverse();
-	Register_tests_reverseBits();
-	Register_tests_hammingWeight();
-	Register_tests_myAtoi();
-	Register_tests_removeDuplicates();
-	Register_tests_divide();
-	Register_tests_reverseList();
+	
+    #if TWO_SUM
+    Register_tests_twoSum();
+    #endif
+
+    #if ADD_TWO_NUMBERS
+    Register_tests_addTwoNumbers();
+    #endif
+
+    #if IS_PALINDROME
+    Register_tests_isPalindrome();
+    #endif
+
+    #if REVERSE
+    Register_tests_reverse();
+    #endif
+
+    #if REVERSE_BITS
+    Register_tests_reverseBits();
+    #endif
+
+    #if HAMMING_WEIGHT
+    Register_tests_hammingWeight();
+    #endif
+
+    #if MY_ATOI
+    Register_tests_myAtoi();
+    #endif
+
+    #if REMOVE_DUPLICATES
+    Register_tests_removeDuplicates();
+    #endif
+
+    #if DIVIDE
+    Register_tests_divide();
+    #endif
+
+    #if REVERSE_LIST
+    Register_tests_reverseList();
+    #endif
+
 
 	runTests( &htest );
 
