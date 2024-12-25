@@ -18,9 +18,10 @@ void TEST__addTwoNumbers_original(void) {
 	struct ListNode* i = result;
 
 	while (i) {
-		printf("%d\n", i->val);
+		printf("%d ", i->val);
 		i = i->next;
 	}
+	printf("\n");
 }
 
 void TEST__addTwoNumbers_42p5(void) {
@@ -36,9 +37,10 @@ void TEST__addTwoNumbers_42p5(void) {
 	struct ListNode* i = result;
 
 	while (i) {
-		printf("%d\n", i->val);
+		printf("%d ", i->val);
 		i = i->next;
 	}
+	printf("\n");
 }
 
 void TEST__addTwoNumbers_99p1(void) {
@@ -54,9 +56,10 @@ void TEST__addTwoNumbers_99p1(void) {
 	struct ListNode* i = result;
 
 	while (i) {
-		printf("%d\n", i->val);
+		printf("%d ", i->val);
 		i = i->next;
 	}
+	printf("\n");
 }
 
 void TEST__addTwoNumbers_3p67(void) {
@@ -72,13 +75,14 @@ void TEST__addTwoNumbers_3p67(void) {
 	struct ListNode* i = result;
 
 	while (i) {
-		printf("%d\n", i->val);
+		printf("%d ", i->val);
 		i = i->next;
 	}
+	printf("\n");
 }
 
 
-void TEST__addTwoNumbers(void) {
+void TEST__addTwoNumbers__11p9999(void) {
 	struct ListNode* result;
 
 	struct ListNode l1d = { .val = 1, .next = NULL };
@@ -94,9 +98,30 @@ void TEST__addTwoNumbers(void) {
 	struct ListNode* i = result;
 
 	while (i) {
-		printf("%d\n", i->val);
+		printf("%d ", i->val);
 		i = i->next;
 	}
+	printf("\n");
+}
+
+void TEST__addTwoNumbers__16p32(void) {
+	struct ListNode* result;
+
+	struct ListNode l1d = { .val = 1, .next = NULL };
+	struct ListNode l1  = { .val = 16, .next = &l1d };
+
+	struct ListNode l2a = { .val = 3, .next = NULL };
+	struct ListNode l2  = { .val = 2, .next = &l2a };
+
+	result = addTwoNumbers(&l1, &l2);
+	
+	struct ListNode* i = result;
+
+	while (i) {
+		printf("%d ", i->val);
+		i = i->next;
+	}
+	printf("\n");
 }
 
 void Register_tests_addTwoNumbers(void){
@@ -116,5 +141,13 @@ void Register_tests_addTwoNumbers(void){
 
 	test.function = TEST__addTwoNumbers_99p1;
 	strcpy( test.testName, "Add Two Numbers. Expected: 0 0 1" );
+	registerTest( &htest, &test );
+
+	test.function = TEST__addTwoNumbers__11p9999;
+	strcpy( test.testName, "Add Two Numbers. Expected: 0 1 0 0 1" );
+	registerTest( &htest, &test );
+
+	test.function = TEST__addTwoNumbers__16p32;
+	strcpy( test.testName, "Add Two Numbers. Expected: 0 1 0 0 1" );
 	registerTest( &htest, &test );
 }

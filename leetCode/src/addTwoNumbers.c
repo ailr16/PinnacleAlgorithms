@@ -1,15 +1,14 @@
 #include "addTwoNumbers.h"
 
 struct ListNode* addTwoNumbers( struct ListNode* l1, struct ListNode* l2 ){
-	struct ListNode* l3;
+	struct ListNode* l3 = NULL;
 	struct ListNode* aux;
+	struct ListNode* tail;
 	unsigned char carry = 0;
 	int sum;
 
-	aux = l3;
-
 	while( l1 || l2 || carry ){
-		l3 = (struct ListNode*)malloc( sizeof(struct ListNode) );
+		aux = (struct ListNode*)malloc( sizeof(struct ListNode) );
 
 		sum = 0;
 
@@ -28,44 +27,20 @@ struct ListNode* addTwoNumbers( struct ListNode* l1, struct ListNode* l2 ){
 			carry = 1;
 			sum -= 10;
 		}
-		printf("%d\n", sum);
-		l3->val  = sum;
-		l3->next = NULL;
 
+		aux->val  = sum;
+
+		if( l3 == NULL ){
+			aux->next = NULL;
+			l3 = aux;
+			tail = l3;
+		}
+		else{
+			aux->next = NULL;
+			tail->next = aux;
+			tail = aux;
+		}
 	}
-
-	/*
-	l3 = (struct ListNode*)malloc(sizeof(struct ListNode));
-
-	l3->val = l1->val + l2->val + carry;
-	carry = 0;
-	if(l3->val > 9){
-		carry = 1;
-		l3->val -= 10;
-	}
-
-	l3->next = (struct ListNode*)malloc(sizeof(struct ListNode));
-
-	l3->next->val = l1->next->val + l2->next->val + carry;
-	carry = 0;
-	if(l3->next->val > 9){
-		carry = 1;
-		l3->next->val -= 10;
-	}
-	l3->next->next = NULL;
-
-	l3->next->next = (struct ListNode*)malloc(sizeof(struct ListNode));
-
-	l3->next->next->val = l1->next->next->val + l2->next->next->val + carry;
-	carry = 0;
-	if(l3->next->next->val > 9){
-		carry = 1;
-		l3->next->next->val -= 10;
-	}
-	l3->next->next->next = NULL;
-
-	printf("CARRY=%d\n", carry);
-	*/
 
 	return l3;
 }
