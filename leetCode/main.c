@@ -19,6 +19,10 @@ int main() {
     Register_tests_addTwoNumbers();
     #endif
 
+    #if LONGEST_SUBSTR
+    Register_tests_longestSubStr();
+    #endif
+
     #if IS_PALINDROME
     Register_tests_isPalindrome();
     #endif

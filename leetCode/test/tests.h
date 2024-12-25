@@ -4,7 +4,8 @@
 #include "testHandler.h"
 
 #define TWO_SUM             0
-#define ADD_TWO_NUMBERS     1
+#define ADD_TWO_NUMBERS     0
+#define LONGEST_SUBSTR      1
 #define IS_PALINDROME       0
 #define REVERSE             0
 #define REVERSE_BITS        0
@@ -23,6 +24,10 @@ void Register_tests_twoSum(void);
 
 #if ADD_TWO_NUMBERS
 void Register_tests_addTwoNumbers(void);
+#endif
+
+#if LONGEST_SUBSTR
+void Register_tests_longestSubStr(void);
 #endif
 
 #if IS_PALINDROME
