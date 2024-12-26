@@ -1,7 +1,7 @@
 PROJECT_NAME  := leetCodeProblems
 
 CC		      := gcc
-CCFLAGS 	  := 
+CCFLAGS 	  := -g
 
 PROJECT_DIR   := $(CURDIR)
 BUILD_DIR     := $(PROJECT_DIR)/Build
@@ -31,6 +31,10 @@ all : $(SRCS)
 .PHONY: run
 run:
 	$(BUILD_DIR)/$(PROJECT_NAME)
+
+.PHONY: debug
+debug:
+	gdb $(BUILD_DIR)/$(PROJECT_NAME)
 
 .PHONY: clean
 clean:
