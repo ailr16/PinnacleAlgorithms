@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "solutions.h": "c",
+        "tests.h": "c",
+        "general.h": "c"
+    }
+}

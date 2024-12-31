@@ -1,7 +1,6 @@
 *
 !*/
 !*.*
-.vscode
 *.vsidx
 *.suo
 *.db
@@ -9,7 +8,6 @@
 *.db-shm
 *.opendb
 *.ipch
-*.json
 *.sln
 *.vcxproj
 *.filters

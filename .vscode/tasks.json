@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc build active file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "${workspaceFolder}/leetCode/main.c",
+                "${workspaceFolder}/leetCode/src/*.c",
+                "${workspaceFolder}/leetCode/test/testHandler.c",
+                "${workspaceFolder}/leetCode/test/testsSrc/*.c",
+                "-o",
+                "${workspaceFolder}/leetCode/Build/leetCodeProblems",
+                "-I",
+                "${workspaceFolder}/leetCode/inc",
+                "-I",
+                "${workspaceFolder}/leetCode/test",
+                "-g"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/gcc"
+        }
+    ]
+}
