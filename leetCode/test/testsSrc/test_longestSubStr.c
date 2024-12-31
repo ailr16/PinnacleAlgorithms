@@ -37,6 +37,10 @@ void TEST__longestSubStr_space(void) {
     printf("%d\n", lengthOfLongestSubstring(str) );
 }
 
+void TEST__longestSubStr_dvdf(void) {
+	char str[] = "dvdf";
+    printf("%d\n", lengthOfLongestSubstring(str) );
+}
 
 
 void Register_tests_longestSubStr(void){
@@ -68,5 +72,9 @@ void Register_tests_longestSubStr(void){
 
 	test.function = TEST__longestSubStr_space;
 	strcpy( test.testName, "Just a space. Expected: 1" );
+	registerTest( &htest, &test );
+
+	test.function = TEST__longestSubStr_dvdf;
+	strcpy( test.testName, "dvdf leetcode test. Expected: 3" );
 	registerTest( &htest, &test );
 }
