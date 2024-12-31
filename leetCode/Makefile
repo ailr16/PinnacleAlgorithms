@@ -13,6 +13,7 @@ SRCS          := main.c
 SRCS		  += src/twoSum.c
 SRCS		  += src/addTwoNumbers.c
 SRCS		  += src/longestSubStr.c
+SRCS		  += src/medianSorted.c
 SRCS		  += src/isPalindrome.c
 SRCS		  += src/reverse.c
 SRCS		  += src/reverseBits.c

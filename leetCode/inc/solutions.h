@@ -5,6 +5,7 @@
 #include "twoSum.h"
 #include "addTwoNumbers.h"
 #include "longsetSubStr.h"
+#include "medianSorted.h"
 #include "isPalindrome.h"
 #include "reverse.h"
 #include "reverseBits.h"

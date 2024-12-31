@@ -23,6 +23,10 @@ int main() {
     Register_tests_longestSubStr();
     #endif
 
+    #if MEDIAN_SORTED
+    Register_tests_medianSorted();
+    #endif
+
     #if IS_PALINDROME
     Register_tests_isPalindrome();
     #endif
