@@ -6,6 +6,7 @@
 #include "addTwoNumbers.h"
 #include "longsetSubStr.h"
 #include "medianSorted.h"
+#include "palindromeSubstr.h"
 #include "isPalindrome.h"
 #include "reverse.h"
 #include "reverseBits.h"

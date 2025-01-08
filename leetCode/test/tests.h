@@ -6,7 +6,8 @@
 #define TWO_SUM             0
 #define ADD_TWO_NUMBERS     0
 #define LONGEST_SUBSTR      0
-#define MEDIAN_SORTED       1
+#define MEDIAN_SORTED       0
+#define PALINDROME_SUBSTR   1
 #define IS_PALINDROME       0
 #define REVERSE             0
 #define REVERSE_BITS        0
@@ -33,6 +34,10 @@ void Register_tests_longestSubStr(void);
 
 #if MEDIAN_SORTED
 void Register_tests_medianSorted(void);
+#endif
+
+#if PALINDROME_SUBSTR
+void Register_tests_palindromeSubstr(void);
 #endif
 
 #if IS_PALINDROME

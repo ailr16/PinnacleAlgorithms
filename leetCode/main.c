@@ -27,6 +27,10 @@ int main() {
     Register_tests_medianSorted();
     #endif
 
+    #if PALINDROME_SUBSTR
+    Register_tests_palindromeSubstr();
+    #endif
+
     #if IS_PALINDROME
     Register_tests_isPalindrome();
     #endif
