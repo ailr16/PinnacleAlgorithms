@@ -7,12 +7,12 @@
 #define ADD_TWO_NUMBERS     0
 #define LONGEST_SUBSTR      0
 #define MEDIAN_SORTED       0
-#define PALINDROME_SUBSTR   1
+#define PALINDROME_SUBSTR   0
 #define IS_PALINDROME       0
 #define REVERSE             0
 #define REVERSE_BITS        0
 #define HAMMING_WEIGHT      0
-#define MY_ATOI             0
+#define MY_ATOI             1
 #define REMOVE_DUPLICATES   0
 #define DIVIDE              0
 #define REVERSE_LIST        0
