@@ -1,0 +1,17 @@
+include_directories(inc)
+
+add_library(lib_addTwoNumbers src/addTwoNumbers.c)
+add_library(lib_divide src/divide.c)
+add_library(lib_hammingWeight src/hammingWeight.c)
+add_library(lib_isPalindrome src/isPalindrome.c)
+add_library(lib_longestSubStr src/longestSubStr.c)
+add_library(lib_medianSorted src/medianSorted.c)
+add_library(lib_myAtoi src/myAtoi.c)
+add_library(lib_palindromeSubstr src/palindromeSubstr.c)
+add_library(lib_removeDuplicates src/removeDuplicates.c)
+add_library(lib_reverse src/reverse.c)
+add_library(lib_reverseBits src/reverseBits.c)
+add_library(lib_reverseList src/reverseList.c)
+add_library(lib_twoSum src/twoSum.c)
+
+add_subdirectory(test)
