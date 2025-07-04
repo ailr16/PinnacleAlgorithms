@@ -21,6 +21,7 @@ enable_testing()
 add_executable(unitTests
     TEST__divide.cpp
     TEST__addTwoNumbers.cpp
+    TEST__p118.cpp
 )
 
 target_link_libraries(unitTests
@@ -29,6 +30,7 @@ target_link_libraries(unitTests
         gmock
         lib_divide
         lib_addTwoNumbers
+        lib_p118
 )
 
 target_include_directories(unitTests PRIVATE ../inc)
