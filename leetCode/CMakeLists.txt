@@ -14,5 +14,6 @@ add_library(lib_reverseBits src/reverseBits.c)
 add_library(lib_reverseList src/reverseList.c)
 add_library(lib_twoSum src/twoSum.c)
 add_library(lib_p118 src/p118.cpp)
+add_library(lib_p11 src/p11.cpp)
 
 add_subdirectory(test)
