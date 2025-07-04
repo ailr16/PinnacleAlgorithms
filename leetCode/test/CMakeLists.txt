@@ -23,6 +23,7 @@ add_executable(unitTests
     TEST__addTwoNumbers.cpp
     TEST__p118.cpp
     TEST__p11.cpp
+    TEST__p8.cpp
 )
 
 target_link_libraries(unitTests
@@ -33,6 +34,7 @@ target_link_libraries(unitTests
         lib_addTwoNumbers
         lib_p118
         lib_p11
+        lib_p8
 )
 
 target_include_directories(unitTests PRIVATE ../inc)
