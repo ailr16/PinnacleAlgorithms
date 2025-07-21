@@ -16,5 +16,6 @@ add_library(lib_twoSum src/twoSum.c)
 add_library(lib_p118 src/p118.cpp)
 add_library(lib_p11 src/p11.cpp)
 add_library(lib_p8 src/p8.cpp)
+add_library(lib_p238 src/p238.cpp)
 
 add_subdirectory(test)
