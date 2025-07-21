@@ -25,6 +25,7 @@ add_executable(unitTests
     TEST__p11.cpp
     TEST__p8.cpp
     TEST__p238.cpp
+    TEST__p12.cpp
 )
 
 target_link_libraries(unitTests
@@ -37,6 +38,7 @@ target_link_libraries(unitTests
         lib_p11
         lib_p8
         lib_p238
+        lib_p12
 )
 
 target_include_directories(unitTests PRIVATE ../inc)
